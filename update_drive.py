@@ -19,8 +19,12 @@ def load_configuration(config):
     return config_parser["MAIN"]["DRIVE_PATH"]
 
 #The directory where the GoogleDrive is mapped must be updated
-def run_command(command):
+def run_command(command, message = None):
     arr_command = command.split()
+
+    if message is not None:
+        arr_command.append(message)
+
     process = subprocess.Popen(arr_command, stdout=PIPE, stderr=PIPE)
     stdout, stderr = process.communicate()
 
@@ -52,7 +56,8 @@ if __name__ == "__main__":
     #Commit changes
     print("Commiting changes. \r\n")
     run_command(f"git add .")
-    run_command(f"git commit -m {message}")
+    print(f'git commit -m {message}')
+    run_command(f"git commit -m", message)
     print("Pushing changes. \r\n")
     run_command(f"git push")
 
