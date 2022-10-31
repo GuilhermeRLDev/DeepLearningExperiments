@@ -63,7 +63,7 @@ if __name__ == "__main__":
 
     # Move to drive
     print(f"Moving to {drive_location}. \r\n")
-    run_command(f"cd {drive_location}")
+    os.chdir(drive_location)
 
     # Pull changes
     print(f"Pulling changes (Syncying might take a while). \r\n")
@@ -71,7 +71,7 @@ if __name__ == "__main__":
 
     # Reflect changes on drive
     print(f"Moving back to project path {current_path}. \r\n")
-    run_command(f"cd {current_path}")
+    os.chdir(current_path)
 
     print("Update completed. \r\n")
 
