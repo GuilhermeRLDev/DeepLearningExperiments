@@ -67,7 +67,7 @@ if __name__ == "__main__":
 
     # Pull changes
     print(f"Pulling changes (Syncying might take a while). \r\n")
-    run_command(f"git pull -X theirs")
+    run_command(f"git merge")
 
     # Reflect changes on drive
     print(f"Moving back to project path {current_path}. \r\n")
