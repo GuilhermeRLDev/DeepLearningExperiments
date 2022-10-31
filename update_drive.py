@@ -21,7 +21,7 @@ def load_configuration(config):
 #The directory where the GoogleDrive is mapped must be updated
 def run_command(command, message = None):
     arr_command = command.split()
-
+    print(arr_command)
     if message is not None:
         arr_command.append(message)
 
