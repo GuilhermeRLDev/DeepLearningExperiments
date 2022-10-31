@@ -1,6 +1,6 @@
 import sys
 import os
 
-def clean_data(name):
+def hello(name):
     return f"Hello world {name}!"
 #Edit folder

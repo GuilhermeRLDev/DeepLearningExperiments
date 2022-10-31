@@ -73,6 +73,7 @@ if __name__ == "__main__":
     print(f"Moving back to project path {current_path}. \r\n")
     os.chdir(current_path)
 
+    #Update completed
     print("Update completed. \r\n")
 
 
