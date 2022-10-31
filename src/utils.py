@@ -2,6 +2,5 @@ import sys
 import os
 
 def hello(name):
-    print("Runing experiment")
-    return f"Hello world test {name}!"
+    return f"Hello world automatic update  {name}!"
 #Edit folder
