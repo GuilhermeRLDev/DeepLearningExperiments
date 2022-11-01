@@ -4,7 +4,6 @@ from models import Pix2PixModel
 from src import clothing_generator
 from datasets.clothing_dataset_source import Dataset
 
-
 def train_cloting_model_pix2pix(model, dataset, save_weights):
     generator = clothing_generator.ClothingGenerator(36, dataset)
     model.train(generator, n_ephocs=10)
@@ -31,7 +30,6 @@ def run_experiments(train=False, load_weights = False):
     images, labels = validation.__getitem__(12)
     print(np.shape(labels))
     prediction = model.g_model.predict(labels)
-
 
     prediction = np.reshape(prediction, (36, 256, 256, 3))
     dataset.show_image(labels[5])
