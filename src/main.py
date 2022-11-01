@@ -18,7 +18,7 @@ def train_cloting_model_pix2pix(model, dataset, save_weights):
 def run_experiments(train=False, load_weights = False):
     dataset = Dataset('resized/segmentation/', 'MASKS')
     validation = clothing_generator.ClothingGenerator(36, dataset, True)
-    model = Pix2PixModel((256, 256, 1), (256, 256, 3))
+    model = Pix2PixModel.Pix2PixModel((256, 256, 1), (256, 256, 3))
 
     if train:
         train_cloting_model_pix2pix()
