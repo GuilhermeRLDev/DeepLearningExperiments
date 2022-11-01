@@ -1,4 +1,7 @@
 '''
+Commit changes to the current repository and pull changes on drive mapping
+Making it accesible for google COLAB for execution
+
 @Author: Guilherme Rossetti Lima
 '''
 
@@ -14,7 +17,6 @@ PIPE = subprocess.PIPE
 def load_configuration(config):
     config_parser = configparser.ConfigParser()
     config_parser.read(config)
-    print(config_parser)
 
     return config_parser["MAIN"]["DRIVE_PATH"]
 
