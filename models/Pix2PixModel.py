@@ -106,7 +106,7 @@ class Pix2PixModel:
         discriminator = tf.keras.layers.Conv2D(1, (4, 4), padding='same', kernel_initializer=init)(discriminator)
         patch_out = tf.keras.activations.sigmoid(discriminator)
 
-        model = tf.keras.Model([in_src_image, in_target_image], patch_out)
+        self.d_model = tf.keras.Model([in_src_image, in_target_image], patch_out)
 
         optimizer = tf.keras.optimizers.Adam(learning_rate=0.0002, beta_1=0.5)
 
