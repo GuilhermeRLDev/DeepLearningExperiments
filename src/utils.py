@@ -1,6 +1,6 @@
 import sys
 import os
-import numpy as np
+import subprocess
 
 '''
 Generator class for clothing segmentation dataset
@@ -17,3 +17,18 @@ def random_crop(image, label):
     cropped_images = tf.image.per_image_standardization(image)
 
     return cropped_images
+
+def run_command(command, message = None):
+    PIPE = subprocess.PIPE
+    arr_command = command.split()
+    print(arr_command)
+    if message is not None:
+        arr_command.append(message)
+
+    process = subprocess.Popen(arr_command, stdout=PIPE, stderr=PIPE)
+    stdout, stderr = process.communicate()
+
+    if stderr is not None and stderr != "":
+        print(stderr)
+    else:
+        print(stdout)

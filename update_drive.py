@@ -14,14 +14,8 @@ from os import getcwd
 
 PIPE = subprocess.PIPE
 
-def load_configuration(config):
-    config_parser = configparser.ConfigParser()
-    config_parser.read(config)
-
-    return config_parser["MAIN"]["DRIVE_PATH"]
-
-#The directory where the GoogleDrive is mapped must be updated
 def run_command(command, message = None):
+    PIPE = subprocess.PIPE
     arr_command = command.split()
     print(arr_command)
     if message is not None:
@@ -30,10 +24,19 @@ def run_command(command, message = None):
     process = subprocess.Popen(arr_command, stdout=PIPE, stderr=PIPE)
     stdout, stderr = process.communicate()
 
-    if stderr is not None and stderr is not "":
+    if stderr is not None and stderr != "":
         print(stderr)
     else:
         print(stdout)
+
+def load_configuration(config):
+    config_parser = configparser.ConfigParser()
+    config_parser.read(config)
+
+    return config_parser["MAIN"]["DRIVE_PATH"]
+
+#The directory where the GoogleDrive is mapped must be updated
+
 
 if __name__ == "__main__":
 
