@@ -2,6 +2,6 @@
 cd '/root'
 mkdir './resized'
 #Unzip dataset
-unzip "/content/gdrive/My Drive/datasets/fashion/images/segmentation" -d "./resized"
+unzip "/content/drive/My Drive/datasets/fashion/images/segmentation" -d "./resized"
 #Images
 ls
