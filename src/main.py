@@ -9,9 +9,9 @@ def train_cloting_model_pix2pix(model, dataset, save_weights):
     model.train(generator, n_ephocs=10)
 
     if (save_weights):
-        model.gan_model.save_weights("/content/gdrive/My Drive/model_weights/gan_label_to_image")
-        model.g_model.save_weights("/content/gdrive/My Drive/model_weights/g_label_to_image")
-        model.d_model.save_weights("/content/gdrive/My Drive/model_weights/d_label_to_image")
+        model.gan_model.save_weights("/content/drive/My Drive/model_weights/gan_label_to_image")
+        model.g_model.save_weights("/content/drive/My Drive/model_weights/g_label_to_image")
+        model.d_model.save_weights("/content/drive/My Drive/model_weights/d_label_to_image")
 
 
 def run_experiments(train=False, load_weights = False):
@@ -23,9 +23,9 @@ def run_experiments(train=False, load_weights = False):
         train_cloting_model_pix2pix()
 
     if load_weights:
-        model.gan_model.load_weights("/content/gdrive/My Drive/model_weights/gan_label_to_image")
-        model.g_model.load_weights("/content/gdrive/My Drive/model_weights/g_label_to_image")
-        model.d_model.load_weights("/content/gdrive/My Drive/model_weights/d_label_to_image")
+        model.gan_model.load_weights("/content/drive/My Drive/model_weights/gan_label_to_image")
+        model.g_model.load_weights("/content/drive/My Drive/model_weights/g_label_to_image")
+        model.d_model.load_weights("/content/drive/My Drive/model_weights/d_label_to_image")
 
     images, labels = validation.__getitem__(12)
     print(np.shape(labels))
