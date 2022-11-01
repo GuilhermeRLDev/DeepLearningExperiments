@@ -42,9 +42,6 @@ def run_experiments(train=False, load_weights = False):
     dataset.show_image(images[5])
 
 
-if __name__ == "__main__":
-    run_experiments(False, True)
-
 
 
 
